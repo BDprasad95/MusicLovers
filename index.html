@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Logic !</title>
+    
+    <style>
+         a{
+            width:20px;
+            height:20px;
+            float: right;
+            text-indent: -9999px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #red{
+            background: #DFEFF2;
+            border-radius: 50%;
+        }
+        #blue{
+            background: #33ccff;
+            border-radius: 50%;
+            transition-duration:4s;
+        }
+           #cyan{
+            background:#64719b;
+            border-radius: 50%;
+               transition-duration:4s;
+        }
+        #dark{
+            background:#22f2b7;
+            border-radius: 50%;
+            transition-duration:4s;
+        }
+        .box1{
+            
+            margin-top:200px;
+            
+        }
+        body{
+        background-image:url("newback.png");
+        }
+    </style>
+    
+    <script>
+        function colors(id){
+             document.body.style.background = document.getElementById(id).innerHTML;
+        }
+        
+        var play,playbtn;
+        function initAudioplayer(){
+            audio = new Audio();
+            audio.src = "06. Company - (www.SongsLover.pk).mp3";
+            audio.loop = true;
+            
+            //play
+            playbtn = document.getElementById("play");
+            playbtn.addEventListener("click",playpause);
+            var fas = document.getElementById("play1");
+            fas.addEventListener("click",playpause);
+            function playpause(){
+                if(audio.paused)
+                    {
+                        audio.play();
+                        playbtn.style.display = "none";
+                        fas.style.display = "block";
+                        playbtn.style.color = '#F26363';
+                        
+                       
+                    
+                    }
+                else{
+                    audio.pause();
+                    fas.style.display = "none";
+                    playbtn.style.display = "block";
+                    fas.style.color = 'black';
+                    
+                }
+            }
+        }
+   window.addEventListener("load",initAudioplayer);
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container" style="font-size:35px;"><i class="fas fa-headphones-alt"></i></div>
+<div class="box">
+            <a id="red" onclick="colors('red')">#DFEFF2</a>    
+            <a id="blue" onclick="colors('blue')">#33ccff</a>
+            <a id="cyan" onclick="colors('cyan')">#64719b</a>    
+            <a id="dark" onclick="colors('dark')">#22f2b7</a>
+        </div>
+    <div class="box1 text-light text-center">
+    <h1 data-toggle="tooltip" title="WELCOME" dat-placement="right" style="font-size:120px;" class=" text-dark"><i class="fas fa-play" id="play" style="cursor:pointer;"></i><i class="fas fa-pause" id="play1" style="display: none;"></i></h1>
+     
+    </div>
+    
+
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js "></script>
+</body>
+
+</html>
